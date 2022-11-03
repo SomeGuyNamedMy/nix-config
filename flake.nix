@@ -33,7 +33,6 @@
             ];
         };
         homeConfigurations.mason = home-manager.lib.homeManagerConfiguration {
-            system = "x86_64-linux";
             pkgs = nixpkgs.legacyPackages.x86_64-linux;
             username = "mason";
             stateVersion = "22.11";
@@ -47,6 +46,11 @@
                 ./mason/packages.nix
                 swww-fork.homeManagerModules.x86_64-linux.default
                 hyprland.homeManagerModules.default
+                {
+                    home.stateVersion = "22.11";
+                    home.username = "mason";
+                    home.homeDirectory = "/home/mason";
+                }
             ];
         };
     };
