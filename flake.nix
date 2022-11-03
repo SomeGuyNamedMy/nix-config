@@ -13,7 +13,7 @@
         swww-fork.url = "github:SomeGuyNamedMy/swww";
     };
     outputs = {self, nixpkgs, nur, home-manager, swww-fork, hyprland, ...}:
-    let shared-modules = [
+    let shared-system-modules = [
                 ./system/configuration.nix
                 ./system/boot.nix
                 ./system/virtualisation.nix
@@ -22,14 +22,30 @@
     in {
         nixosConfigurations.flex = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
-            modules = shared-modules ++ [
+            modules = shared-system-modules ++ [
                 ./system/flex-hardware.nix
             ];
         };
         nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
-            modules = shared-modules ++ [
+            modules = shared-system-modules ++ [
                 ./system/desktop-hardware.nix
+            ];
+        };
+        homeConfigurations.mason = home-manager.lib.homeManagerConfiguration {
+            system = "x86_64-linux";
+            username = "mason";
+            stateVersion = "22.11";
+            homeDirectory = "/home/mason";
+            modules = [
+                ./mason/shell.nix
+                ./mason/kakoune.nix
+                ./mason/mpd.nix
+                ./mason/desktop.nix
+                ./mason/qutebrowser.nix
+                ./mason/packages.nix
+                swww-fork.homeManagerModules.x86_64-linux.default
+                hyprland.homeManagerModules.default
             ];
         };
     };
