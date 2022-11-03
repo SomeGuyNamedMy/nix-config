@@ -34,7 +34,7 @@
     #+ "exec=${pkgs.wbg}/bin/wbg ${my-wallpapers}/log-horizon.png";
   };
 
-  programs.kanshi = {
+  services.kanshi = {
       enable = true;
       profiles = {
           desktop = {
