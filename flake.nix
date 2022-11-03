@@ -7,7 +7,6 @@
         nixosConfigurations.flex = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             modules = [
-                ./cachix.nix
                 ./configuration.nix
                 ./hardware-configuration.nix
                 ./boot.nix
