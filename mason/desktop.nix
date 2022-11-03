@@ -34,32 +34,6 @@
     #+ "exec=${pkgs.wbg}/bin/wbg ${my-wallpapers}/log-horizon.png";
   };
 
-  services.kanshi = {
-      enable = true;
-      profiles = {
-          desktop = {
-              outputs = [
-                  {
-                      criteria = "DP-3";
-                      mode = "2560x1440@144Hz";
-                  }
-              ];
-          };
-          flex = {
-              outputs = [
-                  {
-                      criteria = "eDP-1";
-                  }
-                  {
-                      criteria = "BOE 0x08FA";
-                      mode = "1920x1080@60Hz";
-                  }
-              ];
-          };
-      };
-      systemdTarget = "graphical-session.target";
-  };
-
   programs.waybar = {
     enable = true;
     package = pkgs.waybar.overrideAttrs (oldAttrs: {
