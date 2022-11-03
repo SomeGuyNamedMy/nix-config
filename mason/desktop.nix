@@ -39,13 +39,13 @@
       profiles = {
           desktop = {
               outputs = [
-                  #{
-                      #criteria = "eDP-1";
-                  #}
-                  #{
-                      #criteria = "BOE 0x08FA";
-                      #mode = ""
-                  #}
+                  {
+                      criteria = "DP-3";
+                  }
+                  {
+                      criteria = "GIGA-BYTE TECHNOLOGY CO";
+                      mode = "2560x1440@144Hz";
+                  }
               ];
           };
           flex = {
