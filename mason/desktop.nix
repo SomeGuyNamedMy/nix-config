@@ -41,9 +41,6 @@
               outputs = [
                   {
                       criteria = "DP-3";
-                  }
-                  {
-                      criteria = "GIGA-BYTE TECHNOLOGY CO";
                       mode = "2560x1440@144Hz";
                   }
               ];
