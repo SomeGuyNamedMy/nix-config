@@ -21,13 +21,13 @@
     ];
     in {
         nixosConfigurations.flex = nixpkgs.lib.nixosSystem {
-            inherit "x86_64-linux";
+            system = "x86_64-linux";
             modules = shared-modules ++ [
                 ./system/flex-hardware.nix
             ];
         };
         nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
-            inherit "x86_64-linux";
+            system = "x86_64-linux";
             modules = shared-modules ++ [
                 ./system/desktop-hardware.nix
             ];
