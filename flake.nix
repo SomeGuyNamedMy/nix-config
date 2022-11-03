@@ -34,9 +34,6 @@
         };
         homeConfigurations.mason = home-manager.lib.homeManagerConfiguration {
             pkgs = nixpkgs.legacyPackages.x86_64-linux;
-            username = "mason";
-            stateVersion = "22.11";
-            homeDirectory = "/home/mason";
             modules = [
                 ./mason/shell.nix
                 ./mason/kakoune.nix
