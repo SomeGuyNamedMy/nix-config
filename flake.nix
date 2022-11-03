@@ -19,7 +19,8 @@
                 nur.nixosModules.nur
             ];
         };
-        homeConfigurations.mason = home-manager.lib.homeManagerConfiguration {
+        homeConfigurations.mason = let pkgs = nixpkgs.legacyPackages.x86_64-linux; in home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
             modules = [
                 ./mason/shell.nix
                 ./mason/kakoune.nix
