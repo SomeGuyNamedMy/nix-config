@@ -34,7 +34,7 @@
         };
         homeConfigurations.mason = home-manager.lib.homeManagerConfiguration {
             system = "x86_64-linux";
-            pkgs = nixpkgs.legacyPackages.${system}
+            pkgs = nixpkgs.legacyPackages.${system};
             username = "mason";
             stateVersion = "22.11";
             homeDirectory = "/home/mason";
