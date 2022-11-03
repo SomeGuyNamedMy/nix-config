@@ -12,7 +12,7 @@
         };
         swww-fork.url = "github:SomeGuyNamedMy/swww";
     };
-    outputs = {self, nixpkgs, nur, home-manager, swww-fork, ...}:
+    outputs = {self, nixpkgs, nur, home-manager, swww-fork, hyprland, ...}:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
