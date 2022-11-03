@@ -8,9 +8,13 @@
         };
         swww-fork.url - "github:SomeGuyNamedMy/swww";
     };
-    outputs = {self, nixpkgs, nur, home-manager, swww-fork, ...}: {
+    outputs = {self, nixpkgs, nur, home-manager, swww-fork, ...}:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in {
         nixosConfigurations.flex = nixpkgs.lib.nixosSystem {
-            system = "x86_64-linux";
+            inherit system;
             modules = [
                 ./system/configuration.nix
                 ./system/flex-hardware.nix
@@ -19,7 +23,7 @@
                 nur.nixosModules.nur
             ];
         };
-        homeConfigurations.mason = let pkgs = nixpkgs.legacyPackages.x86_64-linux; in home-manager.lib.homeManagerConfiguration {
+        homeConfigurations.mason = home-manager.lib.homeManagerConfiguration {
             inherit pkgs;
             modules = [
                 ./mason/shell.nix
