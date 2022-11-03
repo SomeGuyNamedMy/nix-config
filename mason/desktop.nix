@@ -55,7 +55,7 @@
                   }
                   {
                       criteria = "BOE 0x08FA";
-                      mode = "1920x1080@60Hz"
+                      mode = "1920x1080@60Hz";
                   }
               ];
           }
