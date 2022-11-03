@@ -6,7 +6,11 @@
             url = "github:hyprwm/Hyprland";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        swww-fork.url - "github:SomeGuyNamedMy/swww";
+        hyprland = {
+            url = "github:hyprwm/Hyprland";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+        swww-fork.url = "github:SomeGuyNamedMy/swww";
     };
     outputs = {self, nixpkgs, nur, home-manager, swww-fork, ...}:
     let
