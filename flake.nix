@@ -27,8 +27,7 @@
                 nur.nixosModules.nur
             ];
         };
-        homeConfigurations.mason = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
+        pkgs.homeConfigurations.mason = home-manager.lib.homeManagerConfiguration {
             modules = [
                 ./mason/shell.nix
                 ./mason/kakoune.nix
