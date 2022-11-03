@@ -60,6 +60,7 @@
               ];
           };
       };
+      systemdTarget = "graphical-session.target";
   };
 
   programs.waybar = {
