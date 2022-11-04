@@ -21,6 +21,9 @@
         libreoffice github-desktop contour
         xdg-utils oh-my-posh
 
+        #shell stuff
+        thefuck tldr goto
+
         cachix
         # text stuff
         texlive.combined.scheme-medium texlab

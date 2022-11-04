@@ -38,6 +38,10 @@ in
             kak-fzf
             powerline-kak
             kakoune-idris
+            kak-auto-pairs
+            kak-tree
+            openscad-kak
+            kakoune-rainbow
         ];
         extraConfig = ''
         eval %sh{kak-lsp --kakoune -s $kak_session}
