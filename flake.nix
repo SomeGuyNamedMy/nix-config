@@ -18,36 +18,39 @@
                 ./system/boot.nix
                 ./system/virtualisation.nix
                 nur.nixosModules.nur
+                home-manager.nixosModules.home-manager
     ];
+    let shared-home-manager-config = [
+        home.stateVersion = "22.11";
+        home.username = "mason";
+        home.homeDirectory = "/home/mason";
+        imports = [
+            hyprland.homeManagerModules.default
+            swww-fork.homeManagerModules.x86_64-linux.default
+            ./mason/shell.nix
+            ./mason/kakoune.nix
+            ./mason/mpd.nix
+            ./mason/desktop.nix
+            ./mason/qutebrowser.nix
+            ./mason/packages.nix
+        ];
+    ];
+    let mason-home-config = {
+        home-manager.users.mason = shared-home-manager-config;
+    };
     in {
         nixosConfigurations.flex = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             modules = shared-system-modules ++ [
                 ./system/flex-hardware.nix
+                mason-home-config
             ];
         };
         nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             modules = shared-system-modules ++ [
                 ./system/desktop-hardware.nix
-            ];
-        };
-        homeConfigurations.mason = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.x86_64-linux;
-            modules = [
-                ./mason/shell.nix
-                ./mason/kakoune.nix
-                ./mason/mpd.nix
-                ./mason/desktop.nix
-                ./mason/qutebrowser.nix
-                ./mason/packages.nix
-                swww-fork.homeManagerModules.x86_64-linux.default
-                hyprland.homeManagerModules.default
-                {
-                    home.stateVersion = "22.11";
-                    home.username = "mason";
-                    home.homeDirectory = "/home/mason";
-                }
+                mason-home-config
             ];
         };
     };
