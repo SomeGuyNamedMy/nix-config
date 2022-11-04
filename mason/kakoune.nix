@@ -39,7 +39,6 @@ in
             powerline-kak
             kakoune-idris
             kak-auto-pairs
-            kak-tree
             openscad-kak
             kakoune-rainbow
         ];
