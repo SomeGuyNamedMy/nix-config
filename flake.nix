@@ -20,7 +20,7 @@
                 nur.nixosModules.nur
                 home-manager.nixosModules.home-manager
     ];
-    shared-home-manager-config = [
+    shared-home-manager-config = {
           home.stateVersion = "22.11";
           home.username = "mason";
           home.homeDirectory = "/home/mason";
@@ -34,7 +34,7 @@
               ./mason/qutebrowser.nix
               ./mason/packages.nix
           ];
-    ];
+    };
     mason-home-config = {
           home-manager.users.mason = shared-home-manager-config;
     };
