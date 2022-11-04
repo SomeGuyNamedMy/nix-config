@@ -6,6 +6,7 @@
         "steam-original"
         "steam-run"
         "minecraft-launcher"
+        "osu-lazer"
     ];
 
     home.packages = with pkgs; [
