@@ -12,6 +12,15 @@
       enableCompletion = true;
       enableSyntaxHighlighting = true;
       autocd = true;
+      plugins = [
+          name = "zsh-autocomplete";
+          src = pkgs.fetchFromGithub {
+              owner = "marlonrichert";
+              name = "zsh-autocomplete";
+              rev = "f07efda31f27446c8940b069d054bb8b0f61e026";
+              sha256 = "x7pXSd8XT8EEIbXgdqDVSLpSvaeKdvHa/YFmFFb3oXU=";
+          };
+      ];
   };
 
   programs.gh = {
