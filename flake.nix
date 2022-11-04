@@ -17,6 +17,7 @@
                 ./system/configuration.nix
                 ./system/boot.nix
                 ./system/virtualisation.nix
+                ./system/general-hardware.nix
                 nur.nixosModules.nur
                 home-manager.nixosModules.home-manager
     ];
