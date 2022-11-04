@@ -20,23 +20,23 @@
                 nur.nixosModules.nur
                 home-manager.nixosModules.home-manager
     ];
-    let shared-home-manager-config = [
-        home.stateVersion = "22.11";
-        home.username = "mason";
-        home.homeDirectory = "/home/mason";
-        imports = [
-            hyprland.homeManagerModules.default
-            swww-fork.homeManagerModules.x86_64-linux.default
-            ./mason/shell.nix
-            ./mason/kakoune.nix
-            ./mason/mpd.nix
-            ./mason/desktop.nix
-            ./mason/qutebrowser.nix
-            ./mason/packages.nix
-        ];
+    shared-home-manager-config = [
+          home.stateVersion = "22.11";
+          home.username = "mason";
+          home.homeDirectory = "/home/mason";
+          imports = [
+              hyprland.homeManagerModules.default
+              swww-fork.homeManagerModules.x86_64-linux.default
+              ./mason/shell.nix
+              ./mason/kakoune.nix
+              ./mason/mpd.nix
+              ./mason/desktop.nix
+              ./mason/qutebrowser.nix
+              ./mason/packages.nix
+          ];
     ];
-    let mason-home-config = {
-        home-manager.users.mason = shared-home-manager-config;
+    mason-home-config = {
+          home-manager.users.mason = shared-home-manager-config;
     };
     in {
         nixosConfigurations.flex = nixpkgs.lib.nixosSystem {
