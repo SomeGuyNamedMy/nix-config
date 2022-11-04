@@ -8,7 +8,7 @@
     };
 
     sound.enable = true;
-    hardware.pulseaudio.enable = true;
+ #   hardware.pulseaudio.enable = true;
     services.pipewire = {
         enable = true;
         alsa.enable = true;
