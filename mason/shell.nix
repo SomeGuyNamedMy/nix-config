@@ -53,10 +53,6 @@
       enableAliases = true;
   };
 
-  programs.bat = {
-      enable = true;
-  };
-
   programs.starship = {
       enable = true;
       enableZshIntegration = true;
