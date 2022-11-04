@@ -12,7 +12,7 @@
         #games
         lutris bottles gamescope
         steam onscripter-en
-        blesh airshipper osu-lzaer xonotic
+        blesh airshipper osu-lazer xonotic
 
         ytfzf minecraft fuzzel
 
