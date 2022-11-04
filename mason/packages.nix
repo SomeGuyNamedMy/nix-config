@@ -22,7 +22,7 @@
         xdg-utils oh-my-posh
 
         #shell stuff
-        thefuck tldr goto
+        thefuck tldr 
 
         cachix
         # text stuff
