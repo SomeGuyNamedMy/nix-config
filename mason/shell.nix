@@ -25,6 +25,10 @@
 #      ];
   };
 
+  programs.nushell = {
+      enable = true;
+  };
+
   programs.gh = {
       enable = true;
       enableGitCredentialHelper = true;
