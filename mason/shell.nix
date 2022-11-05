@@ -13,9 +13,9 @@
       enableSyntaxHighlighting = true;
       autocd = true;
       zplug.plugins = [
-          #{
-          #    name = "";
-          #}
+          {
+              name = "arzzen/calc.plugin.zsh";
+          }
       ];
   };
 
