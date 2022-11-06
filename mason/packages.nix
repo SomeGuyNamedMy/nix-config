@@ -20,7 +20,7 @@
         xfce.thunar imv evince pavucontrol
         blueman wlogout fractal zathura
         libreoffice github-desktop thunderbird-wayland
-        xdg-utils oh-my-posh
+        xdg-utils mpvpaper
 
         #shell stuff
         thefuck tldr 
