@@ -20,6 +20,14 @@
                 ./system/general-hardware.nix
                 nur.nixosModules.nur
                 home-manager.nixosModules.home-manager
+                {
+                    nix.settings.trusted-public-keys = [
+                        "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
+                    ];
+                    nix.settings.substituters = [
+                        "https://cache.iog.io"
+                    ];
+                }
     ];
     shared-home-manager-config = {
           home.stateVersion = "22.11";
