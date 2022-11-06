@@ -19,7 +19,7 @@
 
         xfce.thunar imv evince pavucontrol
         blueman wlogout fractal zathura
-        libreoffice github-desktop contour
+        libreoffice github-desktop thunderbird-wayland
         xdg-utils oh-my-posh
 
         #shell stuff
