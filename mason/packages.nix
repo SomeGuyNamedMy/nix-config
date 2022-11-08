@@ -25,7 +25,7 @@
         #shell stuff
         thefuck tldr 
 
-        cachix
+        cachix emacs-all-the-icons-fonts
         # text stuff
         texlive.combined.scheme-medium texlab
         ltex-ls pandoc
