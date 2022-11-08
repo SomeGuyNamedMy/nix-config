@@ -127,7 +127,8 @@
     extraPackages = epkgs: with epkgs; [
       direnv
       # text manipulation and navigation
-      evil
+      #evil
+      meow
       origami
       aggressive-indent
       # ui

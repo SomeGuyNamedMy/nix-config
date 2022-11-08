@@ -4,7 +4,9 @@
 (direnv-mode)
 
 ;; navigation
-(evil-mode)
+;;(evil-mode)
+(meow-setup)
+(meow-global-mode 1)
 (origami-mode)
 (add-hook 'prog-mode-hook #'aggressive-indent-mode)
 
