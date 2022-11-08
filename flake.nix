@@ -11,6 +11,7 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         swww-fork.url = "github:SomeGuyNamedMy/swww";
+        emacs-overlay.url = "github:nix-community/emacs-overlay";
     };
     outputs = {self, nixpkgs, nur, home-manager, swww-fork, hyprland, ...}:
     let shared-system-modules = [
@@ -42,6 +43,11 @@
               ./mason/desktop.nix
               ./mason/qutebrowser.nix
               ./mason/packages.nix
+              {
+                  nixpkgs.overlays = [
+                      emacs-overlay.overlays.default
+                  ];
+              }
           ];
     };
     mason-home-config = {
