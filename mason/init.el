@@ -1,3 +1,13 @@
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
+(direnv-mode)
+
+;; navigation
+;;(evil-mode)
+(meow-global-mode)
+
+
 (defun meow-setup ()
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
   (meow-motion-overwrite-define-key
@@ -83,17 +93,6 @@
    '("z" . meow-pop-selection)
    '("'" . repeat)
    '("<escape>" . ignore)))
-
-
-
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(tool-bar-mode -1)
-(direnv-mode)
-
-;; navigation
-;;(evil-mode)
-(meow-global-mode 1)
 (meow-setup)
 (origami-mode)
 (add-hook 'prog-mode-hook #'aggressive-indent-mode)
