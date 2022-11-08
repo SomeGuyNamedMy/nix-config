@@ -43,6 +43,11 @@
               ./mason/desktop.nix
               ./mason/qutebrowser.nix
               ./mason/packages.nix
+              {
+                  nixpkgs.overlays = [
+                      (emacs-overlay.overlays.default)
+                  ];
+              }
           ];
     };
     mason-home-config = {
@@ -54,11 +59,6 @@
             modules = shared-system-modules ++ [
                 ./system/flex-hardware.nix
                 mason-home-config
-              {
-                  nixpkgs.overlays = [
-                      emacs-overlay.overlays.default
-                  ];
-              }
             ];
         };
         nixosConfigurations.desktop = nixpkgs.lib.nixosSystem {
