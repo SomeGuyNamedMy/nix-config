@@ -13,7 +13,7 @@
         swww-fork.url = "github:SomeGuyNamedMy/swww";
         emacs-overlay.url = "github:nix-community/emacs-overlay";
     };
-    outputs = {self, nixpkgs, nur, home-manager, swww-fork, hyprland, ...}:
+    outputs = {self, nixpkgs, nur, home-manager, swww-fork, hyprland, emacs-overlay, ...}:
     let shared-system-modules = [
                 ./system/configuration.nix
                 ./system/boot.nix
