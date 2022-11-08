@@ -1,5 +1,5 @@
 (defun meow-setup ()
-;;  (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
+  (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
   (meow-motion-overwrite-define-key
    '("j" . meow-next)
    '("k" . meow-prev)
@@ -93,8 +93,8 @@
 
 ;; navigation
 ;;(evil-mode)
-(meow-setup)
 (meow-global-mode 1)
+(meow-setup)
 (origami-mode)
 (add-hook 'prog-mode-hook #'aggressive-indent-mode)
 
