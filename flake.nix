@@ -47,7 +47,8 @@
               ./mason/packages.nix
               {
                   nixpkgs.overlays = [
-                      emacs-overlay.overlays
+                      emacs-overlay.overlays.emacs
+                      emacs-overlay.overlays.package
                   ];
               }
           ];
