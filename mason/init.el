@@ -4,8 +4,7 @@
 (direnv-mode)
 
 ;; navigation
-;;(evil-mode)
-(meow-global-mode)
+(evil-mode)
 
 
 (origami-mode)
