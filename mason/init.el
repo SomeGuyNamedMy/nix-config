@@ -92,7 +92,7 @@
 
 ;; navigation
 ;;(evil-mode)
-(meow-setup)
+;;(meow-setup)
 (meow-global-mode 1)
 
 
