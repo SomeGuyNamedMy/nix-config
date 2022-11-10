@@ -35,6 +35,7 @@
   fonts.fonts = with pkgs;  [
       iosevka
       nerdfonts
+      emacs-all-the-icons-fonts
   ];
 
   environment.pathsToLink = [ "/share/zsh" ];

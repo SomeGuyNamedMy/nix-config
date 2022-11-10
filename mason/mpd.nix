@@ -3,7 +3,7 @@
 {
   services.mpd = {
     enable = true;
-    musicDirectory = "/home/may/Music";
+    musicDirectory = "/home/mason/Music";
     network = {
       startWhenNeeded = true;
     };

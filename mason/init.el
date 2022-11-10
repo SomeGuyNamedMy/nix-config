@@ -84,7 +84,8 @@
    '("'" . repeat)
    '("<escape>" . ignore)))
 
-
+(load-theme 'wombat)
+(add-to-list 'default-frame-alist '(alpha . (90 . 85)))
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
@@ -92,23 +93,47 @@
 
 ;; navigation
 ;;(evil-mode)
-;;(meow-setup)
+(require 'meow)
+(meow-setup)
 (meow-global-mode 1)
-
-
-
 (origami-mode)
 (add-hook 'prog-mode-hook #'aggressive-indent-mode)
 
 ;; ui enhancment
+(global-corfu-mode)
 (vertico-mode)
 (marginalia-mode)
+(require 'orderless)
+(setq completion-styles '(orderless basic)
+      completion-category-overrides '((file (styles basic partial-completion))))
 (all-the-icons-completion-mode)
 ;;(add-hook 'marginalia-mode-hook #'all-the-icons-completion-marginalia-setub)
 (dirvish-override-dired-mode)
 (doom-modeline-mode)
 (dashboard-setup-startup-hook)
-(add-hook 'prog-mode-hook #'minimap-mode)
+
+;; ligatures
+(ligature-set-ligatures 't '("www"))
+;; Enable traditional ligature support in eww-mode, if the
+;; `variable-pitch' face supports it
+(ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
+;; Enable all Cascadia Code ligatures in programming modes
+(ligature-set-ligatures 'prog-mode '("|||>" "<|||" "<==>" "<!--" "####" "~~>" "***" "||=" "||>"
+                                     ":::" "::=" "=:=" "===" "==>" "=!=" "=>>" "=<<" "=/=" "!=="
+                                     "!!." ">=>" ">>=" ">>>" ">>-" ">->" "->>" "-->" "---" "-<<"
+                                     "<~~" "<~>" "<*>" "<||" "<|>" "<$>" "<==" "<=>" "<=<" "<->"
+                                     "<--" "<-<" "<<=" "<<-" "<<<" "<+>" "</>" "###" "#_(" "..<"
+                                     "..." "+++" "/==" "///" "_|_" "www" "&&" "^=" "~~" "~@" "~="
+                                     "~>" "~-" "**" "*>" "*/" "||" "|}" "|]" "|=" "|>" "|-" "{|"
+                                     "[|" "]#" "::" ":=" ":>" ":<" "$>" "==" "=>" "!=" "!!" ">:"
+                                     ">=" ">>" ">-" "-~" "-|" "->" "--" "-<" "<~" "<*" "<|" "<:"
+                                     "<$" "<=" "<>" "<-" "<<" "<+" "</" "#{" "#[" "#:" "#=" "#!"
+                                     "##" "#(" "#?" "#_" "%%" ".=" ".-" ".." ".?" "+>" "++" "?:"
+                                     "?=" "?." "??" ";;" "/*" "/=" "/>" "//" "__" "~~" "(*" "*)"
+                                     "\\\\" "://"))
+;; Enables ligature checks globally in all buffers. You can also do it
+;; per mode with `ligature-mode'.
+(global-ligature-mode t)
 
 (auto-sudoedit-mode)
 
@@ -116,7 +141,20 @@
 ;; programming stuff
 (nix-mode)
 (haskell-mode)
+(require 'idris2-mode)
+(idris2-mode)
 (dhall-mode)
 (rust-mode)
-(add-hook 'prog-mode-hook #'lsp-deferred)
+
+;; enable lsp servers
+(add-hook 'nix-mode-hook #'lsp)
+(add-hook 'rust-mode-hook #'lsp)
+(add-hook 'haskell-mode-hook #'lsp)
+(add-hook 'python-mode-hook #'lsp)
+(add-hook 'java-mode-hook #'lsp)
+(add-hook 'cc-mode-hook #'lsp)
+(add-hook 'ruby-mode-hook #'lsp)
+(add-hook 'csharp-mode-hook #'lsp)
+(add-hook 'web-mode-hook #'lsp)
+
 (add-hook 'lsp-after-open-hook #'lsp-origami-try-enable)

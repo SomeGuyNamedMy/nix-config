@@ -42,10 +42,8 @@
               hyprland.homeManagerModules.default
               swww-fork.homeManagerModules.x86_64-linux.default
               ./mason/shell.nix
-              ./mason/kakoune.nix
               ./mason/mpd.nix
               ./mason/desktop.nix
-              ./mason/qutebrowser.nix
               ./mason/packages.nix
               {
                   nixpkgs.overlays = [

@@ -40,33 +40,14 @@
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     });
     systemd.enable = true;
-    #settings = {
-    #    mainBar = {
-    #        layer = "top";
-    #        position = "top";
-    #        height = 30;
-    #        modules-left = [ "wlr/workspaces" ];
-    #        modules-center = [ "hyprland/window" ];
-    #        modules-right = ["bluetooth" "pulseaudio" "clock" ];
-    #    };
-    #    "bluetooth" = {
-    #        format = " {status}";
-    #    };
-    #};
   };
 
   programs.qutebrowser = {
     enable = true;
+    settings = {
+      window.transparent = true;
+    };
   };
-
- # programs.foot = {
- #   enable = true;
- #   settings = {
- #     colors = {
- #       alpha = 0.9;
- #     };
- #   };
- # };
 
   programs.wezterm = {
     enable = true;
@@ -121,25 +102,32 @@
   programs.swww = {
     enable = true;
     systemd.enable = true;
+    imgDir = ./backgrounds/lofi-girl-lofi.gif;
   };
   programs.emacs = {
     enable = true;
+    package = pkgs.emacsPgtkNativeComp;
     extraPackages = epkgs: with epkgs; [
       direnv
+      use-package
       # text manipulation and navigation
       #evil
       meow
       origami
       aggressive-indent
       # ui
+      paper-theme
+      corfu
       vertico
       marginalia
       prescient
+      orderless
       dirvish
       doom-modeline
       all-the-icons
       all-the-icons-dired
       all-the-icons-completion
+      ligature
       dashboard
       minimap
       auto-sudoedit
@@ -150,6 +138,8 @@
       nix-mode
       rust-mode
       haskell-mode
+      idris2-mode
+      prop-menu
       dhall-mode
       lsp-mode
       lsp-ui

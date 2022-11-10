@@ -20,12 +20,12 @@
         xfce.thunar imv evince pavucontrol
         blueman wlogout fractal zathura
         libreoffice github-desktop thunderbird-wayland
-        xdg-utils mpvpaper
+        xdg-utils mpvpaper nyxt
 
         #shell stuff
         thefuck tldr 
 
-        cachix emacs-all-the-icons-fonts
+        cachix 
         # text stuff
         texlive.combined.scheme-medium texlab
         ltex-ls pandoc
