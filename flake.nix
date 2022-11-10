@@ -11,9 +11,8 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         swww-fork.url = "github:SomeGuyNamedMy/swww";
-        emacs-overlay.url = "github:nix-community/emacs-overlay";
     };
-    outputs = {self, nixpkgs, nur, home-manager, swww-fork, hyprland, emacs-overlay, ...}:
+    outputs = {self, nixpkgs, nur, home-manager, swww-fork, hyprland, ...}:
     let shared-system-modules = [
                 ./system/configuration.nix
                 ./system/boot.nix
@@ -42,13 +41,12 @@
               hyprland.homeManagerModules.default
               swww-fork.homeManagerModules.x86_64-linux.default
               ./mason/shell.nix
+              ./mason/kakoune.nix
               ./mason/mpd.nix
               ./mason/desktop.nix
               ./mason/packages.nix
               {
                   nixpkgs.overlays = [
-                      emacs-overlay.overlays.emacs
-                      emacs-overlay.overlays.package
                   ];
               }
           ];

@@ -33,13 +33,14 @@
         ghc cabal-install stack haskell-language-server stylish-haskell stack git
         rustc cargo rust-analyzer rustfmt clang astyle rnix-lsp nixpkgs-fmt
     ] ++ (with python39Packages; [
-        python  yapf
-        python-lsp-server
-    ]) ++ (with rubyPackages_3_1; [
-        ruby rufo
-        solargraph
-    ]) ++ (with luajitPackages; [
-        lua stylua
-        lua-lsp
-    ]);
+      python  yapf
+      python-lsp-server
+    ])
+++ (with rubyPackages_3_1; [
+  ruby rufo
+  solargraph
+]) ++ (with luajitPackages; [
+  lua stylua
+  lua-lsp
+]);
 }

@@ -102,53 +102,6 @@
   programs.swww = {
     enable = true;
     systemd.enable = true;
-    imgDir = ./backgrounds/lofi-girl-lofi.gif;
-  };
-  programs.emacs = {
-    enable = true;
-    package = pkgs.emacsPgtkNativeComp;
-    extraPackages = epkgs: with epkgs; [
-      direnv
-      use-package
-      # text manipulation and navigation
-      #evil
-      meow
-      origami
-      aggressive-indent
-      # ui
-      paper-theme
-      corfu
-      vertico
-      marginalia
-      prescient
-      orderless
-      dirvish
-      doom-modeline
-      all-the-icons
-      all-the-icons-dired
-      all-the-icons-completion
-      ligature
-      dashboard
-      minimap
-      auto-sudoedit
-
-      markdown-preview-mode
-
-      #programming
-      nix-mode
-      rust-mode
-      haskell-mode
-      idris2-mode
-      prop-menu
-      dhall-mode
-      lsp-mode
-      lsp-ui
-      lsp-origami
-      lsp-haskell
-      magit
-
-    ];
-    extraConfig = builtins.readFile ./init.el;
   };
 
   xdg.enable = true;
