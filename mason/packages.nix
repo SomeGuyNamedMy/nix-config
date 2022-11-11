@@ -21,7 +21,7 @@
         xfce.thunar imv evince pavucontrol
         blueman wlogout fractal zathura
         libreoffice github-desktop thunderbird-wayland
-        xdg-utils mpvpaper nyxt discord betterdiscordctl
+        xdg-utils mpvpaper discord betterdiscordctl
 
         #shell stuff
         thefuck tldr 
