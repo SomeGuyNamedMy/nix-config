@@ -7,6 +7,7 @@
         "steam-run"
         "minecraft-launcher"
         "osu-lazer"
+        "discord"
     ];
 
     home.packages = with pkgs; [
@@ -20,7 +21,7 @@
         xfce.thunar imv evince pavucontrol
         blueman wlogout fractal zathura
         libreoffice github-desktop thunderbird-wayland
-        xdg-utils mpvpaper nyxt
+        xdg-utils mpvpaper nyxt discord betterdiscordctl
 
         #shell stuff
         thefuck tldr 

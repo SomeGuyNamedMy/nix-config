@@ -48,7 +48,7 @@
   users.users.mason = {
     isNormalUser = true;
     description = "Mason Dear";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "video" "audio" "kvm" "" ];
     shell = pkgs.zsh;
   };
 
