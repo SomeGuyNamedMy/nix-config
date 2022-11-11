@@ -12,7 +12,7 @@
 
     home.packages = with pkgs; [
         #games
-        lutris bottles gamescope
+        lutris bottles gamescope xivlauncher
         steam onscripter-en
         blesh airshipper osu-lazer xonotic
 
