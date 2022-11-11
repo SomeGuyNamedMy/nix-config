@@ -38,7 +38,7 @@ in
             kak-fzf
             powerline-kak
             kakoune-idris
-            kak-auto-pairs
+            auto-pairs-kak
             openscad-kak
             kakoune-rainbow
         ];
