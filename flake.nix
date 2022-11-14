@@ -11,9 +11,10 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
         swww-fork.url = "github:SomeGuyNamedMy/swww";
+        replugged.url = "github:replugged-org/replugged";
     };
-    outputs = {self, nixpkgs, nur, home-manager, swww-fork, hyprland, ...}:
-    let shared-system-modules = [
+    outputs = {self, nixpkgs, nur, home-manager, swww-fork, hyprland, replugged, ...}: let
+    shared-system-modules = [
                 ./system/configuration.nix
                 ./system/boot.nix
                 ./system/virtualisation.nix
@@ -68,6 +69,7 @@
                 ./system/desktop-hardware.nix
                 mason-home-config
             ];
+            specialArgs = { inherit replugged; };
         };
     };
 }

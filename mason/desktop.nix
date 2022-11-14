@@ -1,11 +1,22 @@
 { pkgs, lib, config, ... }: #my-wallpapers, ... }:
 
 {
+
+  home.pointerCursor = {
+      name = "Nordzy-cursors";
+      package = pkgs.nordzy-cursor-theme;
+      gtk.enable = true;
+  };
+
   gtk = {
     enable = true;
     theme = {
-      name = "Orchis";
-      package = pkgs.orchis;
+      name = "Nordic";
+      package = pkgs.nordic;
+    };
+    iconTheme = {
+        name = "Nordzy-icons";
+        package = pkgs.nordzy-icon-theme;
     };
     gtk3.extraConfig = {
       gtk-decoration-layout = ":menu";

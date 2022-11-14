@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
+  networking.hostName = "flex";
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/45d651cf-a51c-492d-bd94-1b860ffcfc30";

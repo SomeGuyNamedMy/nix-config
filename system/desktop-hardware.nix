@@ -12,6 +12,7 @@
   boot.initrd.kernelModules = ["amdgpu"];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  networking.hostName = "desktop";
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/f7ca40d7-562c-4e9f-9591-4d5ae3741d5e";

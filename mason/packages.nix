@@ -13,15 +13,15 @@
     home.packages = with pkgs; [
         #games
         lutris bottles gamescope xivlauncher
-        steam onscripter-en
+        steam onscripter-en discord
         blesh airshipper osu-lazer xonotic
 
-        ytfzf minecraft fuzzel
+        ytfzf minecraft fuzzel nordzy-icon-theme
 
         xfce.thunar imv evince pavucontrol
         blueman wlogout fractal zathura
         libreoffice github-desktop thunderbird-wayland
-        xdg-utils mpvpaper discord betterdiscordctl
+        xdg-utils mpvpaper betterdiscordctl
 
         #shell stuff
         thefuck tldr 
