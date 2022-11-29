@@ -17,11 +17,12 @@
         blesh airshipper osu-lazer xonotic
 
         ytfzf minecraft fuzzel nordzy-icon-theme
+        rofi-wayland
 
         xfce.thunar imv evince pavucontrol
         blueman wlogout fractal zathura
         libreoffice github-desktop thunderbird-wayland
-        xdg-utils mpvpaper betterdiscordctl
+        xdg-utils mpvpaper betterdiscordctl filezilla putty
 
         #shell stuff
         thefuck tldr 
@@ -32,7 +33,7 @@
         ltex-ls pandoc
         #programming stuff
         ghc cabal-install stack haskell-language-server stylish-haskell stack git
-        rustc cargo rust-analyzer rustfmt clang astyle rnix-lsp nixpkgs-fmt
+        rustc cargo rust-analyzer rustfmt clang astyle rnix-lsp nixfmt
     ] ++ (with python39Packages; [
       python  yapf
       python-lsp-server

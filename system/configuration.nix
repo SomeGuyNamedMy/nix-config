@@ -9,6 +9,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.dconf.enable = true;
+  programs.gamemode.enable = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -16,8 +17,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  xdg.icons.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
@@ -32,15 +31,9 @@
   security.rtkit.enable = true;
 
   fonts.fonts = with pkgs;  [
-      iosevka
+      cascadia-code
       nerdfonts
       emacs-all-the-icons-fonts
-  ];
-
-  environment.pathsToLink = [ "/share/zsh" ];
-  environment.systemPackages = with pkgs; [
-      trashy
-      nushell
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

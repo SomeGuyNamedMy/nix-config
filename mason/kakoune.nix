@@ -13,7 +13,6 @@ let
   };
 in
 {
-    programs.helix.enable = true;
     programs.kakoune = {
         enable = true;
         config = {

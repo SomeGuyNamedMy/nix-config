@@ -14,20 +14,6 @@
       name = "Nordic";
       package = pkgs.nordic;
     };
-    iconTheme = {
-        name = "Nordzy-icons";
-        package = pkgs.nordzy-icon-theme;
-    };
-    gtk3.extraConfig = {
-      gtk-decoration-layout = ":menu";
-      gtk-button-images = 0;
-      gtk-menu-images = 0;
-    };
-    gtk4.extraConfig = {
-      gtk-decoration-layout = ":menu";
-      gtk-button-images = 0;
-      gtk-menu-images = 0;
-    };
   };
 
   qt.enable = true;
@@ -40,9 +26,8 @@
     systemdIntegration = true;
     recommendedEnvironment = true;
     extraConfig = builtins.readFile ./hyprland.conf
-      + "bind=SUPER,R,exec,${pkgs.bemenu}/bin/bemenu-run -b\n"
-      + "bind=SUPER,P,exec,${pkgs.fuzzel}/bin/fuzzel";
-    #+ "exec=${pkgs.wbg}/bin/wbg ${my-wallpapers}/log-horizon.png";
+    + "bind=SUPER,R,exec,${pkgs.bemenu}/bin/bemenu-run -b\n"
+    + "bind=SUPER,P,exec,rofi -show";
   };
 
   programs.waybar = {
@@ -59,6 +44,7 @@
       window.transparent = true;
     };
   };
+  programs.librewolf.enable = true;
 
   programs.wezterm = {
     enable = true;
